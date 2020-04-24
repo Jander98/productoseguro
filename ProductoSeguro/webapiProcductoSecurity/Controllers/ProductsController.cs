@@ -17,12 +17,14 @@ namespace webapiProcductoSecurity.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Products
+        [Authorize]
         public IQueryable<Product> GetProducts()
         {
             return db.Products;
         }
 
         // GET: api/Products/5
+        [Authorize]
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
@@ -36,6 +38,7 @@ namespace webapiProcductoSecurity.Controllers
         }
 
         // PUT: api/Products/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduct(int id, Product product)
         {
@@ -71,6 +74,7 @@ namespace webapiProcductoSecurity.Controllers
         }
 
         // POST: api/Products
+        [Authorize]
         [ResponseType(typeof(Product))]
         public IHttpActionResult PostProduct(Product product)
         {
@@ -86,6 +90,7 @@ namespace webapiProcductoSecurity.Controllers
         }
 
         // DELETE: api/Products/5
+        [Authorize]
         [ResponseType(typeof(Product))]
         public IHttpActionResult DeleteProduct(int id)
         {
